@@ -4,12 +4,12 @@ import random
 pygame.init()
 
 window_width = 800
-window_height = 600
+window_height = 800
 window = pygame.display.set_mode((window_width, window_height))
 pygame.display.set_caption ("Alphabet Game")
 
 black = (0, 0, 0)
-white = (255, 255, 255)
+white = (200, 200, 200)
 
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -21,7 +21,7 @@ chosen_letters = random.sample(shuffled_alphabet, 10)
 player_letters = []
 player_word = ""
 
-valid_words = ["CAT", "DOG", "HAT", "LOG", "MAT", "RAT"]
+valid_words = ["CAT", "DOG", "HAT", "LOG", "BAT", "RAT", "FOUR", "TAKE", "MAKE", "IMAGE", "IMAGINATION", "CONTROL", "UNIQUE", "INSPIRATION", "TOOL", "CODE", "ALPHABET", "NAVIGATE", "FLOW", "BOOLEAN", "WINDOW", "DOOR", "OPEN"]
 
 def reshuffle_letters():
     random.shuffle(chosen_letters)
@@ -60,9 +60,9 @@ while running:
     welcome_caption_surface = welcome_caption_font.render(welcome_caption, True, black)
     window.blit(welcome_caption_surface, (100, 50))
 
-    guide_font = pygame.font.Font(None, 28)
+    guide_font = pygame.font.Font(None, 20)
     guide_surface = guide_font.render(guide_message, True, black)
-    window.blit(guide_surface, (100, 150))
+    window.blit(guide_surface, (50, 250))
 
     font = pygame.font.Font(None, 36)
     for i, letter in enumerate(chosen_letters):
